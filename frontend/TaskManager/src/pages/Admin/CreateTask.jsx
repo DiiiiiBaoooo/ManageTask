@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import DashboardLayout from '../../components/layouts/DashBoardLayout'
+import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { PRIORITY_DATA } from '../../utils/data'
 import axiosInstance from '../../utils/axiosInstance'
 import toast from "react-hot-toast"
