@@ -13,7 +13,7 @@ import AddAttachmentsInput from '../../components/Inputs/AddAttachmentsInput'
 import { API_PATHS } from '../../utils/apiPaths'
 import Modal from '../../components/Modal'
 import DeleteAlert from '../../components/DeleteAlert'
-
+import socket from "../../utils/socket";
 
 const CreateTask = () => {
     const location = useLocation();
@@ -63,6 +63,8 @@ const CreateTask = () => {
                 dueDate: new Date(taskData.dueDate).toISOString(),
                 todoChecklist:todolist,
             });
+            socket.emit("task-updated"); // hoặc trong updateTask
+
             toast.success("task create success fully ");
             clearData();
         } catch (error) {
